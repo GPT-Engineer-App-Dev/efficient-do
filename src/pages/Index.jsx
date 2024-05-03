@@ -43,7 +43,7 @@ const Index = () => {
           <ListItem key={task.id} d="flex" justifyContent="space-between" alignItems="center">
             <Flex align="center">
               <ListIcon as={FaCheckCircle} color={task.isCompleted ? 'green.500' : 'gray.300'} onClick={() => toggleTaskCompletion(task.id)} cursor="pointer" />
-              <span style={{ textDecoration: task.isCompleted ? 'line-through' : 'none' }}>{task.text}</span>
+              <span style={{ textDecoration: task.isCompleted ? 'line-through' : 'none' }} onClick={() => toggleTaskCompletion(task.id)} cursor="pointer">{task.text}</span>
             </Flex>
             <IconButton aria-label="Delete task" icon={<FaTrash />} onClick={() => deleteTask(task.id)} />
           </ListItem>
